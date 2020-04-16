@@ -9,7 +9,8 @@ namespace ReadFilesCases
     public interface EasyFileReader
     {
         FileType FileType { get; set; }
-
+        Boolean IsRoleBased { get; set; }
+        Role UserRole { get; set; }
         string ReadFile();
     }
 }

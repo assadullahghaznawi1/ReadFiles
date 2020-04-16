@@ -9,6 +9,9 @@ namespace ReadFilesCases
     class EasyTextReader : ReadFileHandler, EasyFileReader
     {
         public FileType FileType { get; set; }
+        public bool IsRoleBased { get; set; }
+        public Role UserRole { get; set; }
+
         public EasyTextReader(string path) : base(path)
         {
             FileType = FileType.Txt;
@@ -17,9 +20,18 @@ namespace ReadFilesCases
         {
 
         }
+        public EasyTextReader(string path, Boolean isRoleBased, Role userRole) : this(path)
+        {
+            IsRoleBased = isRoleBased;
+            UserRole = userRole;
+        }
 
         public new string ReadFile()
         {
+            if (IsRoleBased)
+            {
+                return base.ReadFileBySecurityrRole(UserRole);
+            }
             return base.ReadFile();
         }
     }
