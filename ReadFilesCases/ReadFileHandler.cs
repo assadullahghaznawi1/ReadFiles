@@ -9,7 +9,8 @@ namespace ReadFilesCases
 {
     public enum FileType
     {
-        Txt
+        Txt,
+        Xml
     }
     public class ReadFileHandler
     {
