@@ -22,6 +22,11 @@ namespace ReadFilesCases
             UserRole = userRole;
         }
 
+        public EasyXmlReader(string path, Boolean IsEncryptionActive) : base(path, IsEncryptionActive)
+        {
+
+        }
+
         public new string ReadFile()
         {
             if (IsRoleBased)
