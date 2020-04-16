@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EasyFileReader.cs" />
     <Compile Include="EasyTextReader.cs" />
     <Compile Include="EasyXmlReader.cs" />
     <Compile Include="ReadFileHandler.cs" />

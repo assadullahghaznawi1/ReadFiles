@@ -6,17 +6,32 @@ using System.Threading.Tasks;
 
 namespace ReadFilesCases
 {
-    class EasyXmlReader : ReadFileHandler
+    class EasyXmlReader : ReadFileHandler , EasyFileReader
     {
         public FileType FileType { get; set; }
+        public Boolean IsRoleBased { get; set; }
+        public Role UserRole { get; set; }
+
         public EasyXmlReader(string path) : base(path)
         {
             FileType = FileType.Xml;
         }
+        public EasyXmlReader(string path, Boolean isRoleBased, Role userRole) : this(path)
+        {
+            IsRoleBased = isRoleBased;
+            UserRole = userRole;
+        }
 
         public new string ReadFile()
         {
-            return base.ReadFile();
+            if (IsRoleBased)
+            {
+                return ReadFileBySecurityrRole(UserRole);
+            }
+            else
+            {
+                return base.ReadFile();
+            }
         }
     }
 }

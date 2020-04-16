@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ReadFilesCases
 {
-    class EasyTextReader : ReadFileHandler
+    class EasyTextReader : ReadFileHandler, EasyFileReader
     {
         public FileType FileType { get; set; }
         public EasyTextReader(string path) : base(path)

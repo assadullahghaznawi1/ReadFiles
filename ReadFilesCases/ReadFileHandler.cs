@@ -7,6 +7,11 @@ using System.IO;
 
 namespace ReadFilesCases
 {
+    public enum Role
+    {
+        Operator,
+        Admin
+    }
     public enum FileType
     {
         Txt,
@@ -14,6 +19,9 @@ namespace ReadFilesCases
     }
     public class ReadFileHandler
     {
+        private const string Error = "Error: ";
+        private const string Admin = "admin";
+        private const string Message = "user is not authorized";
         protected string Path { get; set; }
         public Boolean IsEncryptionActive { get; set; }
         public ReadFileHandler(string path)
@@ -44,7 +52,20 @@ namespace ReadFilesCases
             }
             catch (Exception e)
             {
-                return ("Error " + e.Message);
+                return (Error + e.Message);
+            }
+        }
+
+        // Assumption all paths containing Admin are only for admins
+        protected string ReadFileBySecurityrRole(Role userRole)
+        {
+            if (userRole == Role.Operator && Path.Contains(Admin))
+            {
+                return Message;
+            }
+            else
+            {
+                return ReadFile();
             }
         }
     }
