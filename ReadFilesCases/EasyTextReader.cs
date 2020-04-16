@@ -13,6 +13,10 @@ namespace ReadFilesCases
         {
             FileType = FileType.Txt;
         }
+        public EasyTextReader(string path, Boolean IsEncryptionActive) : base(path, IsEncryptionActive)
+        {
+
+        }
 
         public new string ReadFile()
         {
