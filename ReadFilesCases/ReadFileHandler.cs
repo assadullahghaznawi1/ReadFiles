@@ -15,7 +15,8 @@ namespace ReadFilesCases
     public enum FileType
     {
         Txt,
-        Xml
+        Xml,
+        Json
     }
     public class ReadFileHandler
     {
