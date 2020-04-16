@@ -24,7 +24,7 @@ namespace ReadFilesCases
 
         public EasyXmlReader(string path, Boolean IsEncryptionActive) : base(path, IsEncryptionActive)
         {
-
+            FileType = FileType.Xml;
         }
 
         public new string ReadFile()

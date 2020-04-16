@@ -18,7 +18,7 @@ namespace ReadFilesCases
         }
         public EasyTextReader(string path, Boolean IsEncryptionActive) : base(path, IsEncryptionActive)
         {
-
+            FileType = FileType.Txt;
         }
         public EasyTextReader(string path, Boolean isRoleBased, Role userRole) : this(path)
         {

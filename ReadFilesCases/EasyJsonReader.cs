@@ -14,7 +14,10 @@ namespace ReadFilesCases
         {
             FileType = FileType.Json;
         }
-
+        public EasyJsonReader(string path, Boolean IsEncryptionActive) : base(path, IsEncryptionActive)
+        {
+            FileType = FileType.Json;
+        }
         public new string ReadFile()
         {
             return base.ReadFile();
