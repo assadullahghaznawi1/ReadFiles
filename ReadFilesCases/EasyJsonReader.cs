@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ReadFilesCases
 {
-    class EasyJsonReader : ReadFileHandler, EasyFileReader
+    public class EasyJsonReader : ReadFileHandler, EasyFileReader
     {
         public FileType FileType { get; set; }
         public Boolean IsRoleBased { get; set; }

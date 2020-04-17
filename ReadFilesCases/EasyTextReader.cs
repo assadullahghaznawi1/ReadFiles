@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ReadFilesCases
 {
-    class EasyTextReader : ReadFileHandler, EasyFileReader
+    public class EasyTextReader : ReadFileHandler, EasyFileReader
     {
         public FileType FileType { get; set; }
         public bool IsRoleBased { get; set; }
